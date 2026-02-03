@@ -94,7 +94,7 @@ export function Footer() {
             className="text-sm text-gray-500"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            © 2026 Mohammad Habib. All rights reserved.
+            © 2026 Mohammad Habib. Made with love & care.
           </p>
         </motion.div>
       </div>

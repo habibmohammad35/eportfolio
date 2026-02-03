@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Linkedin, Quote } from 'lucide-react';
-import professorZhao from 'figma:asset/92ed638d16ef8d032740187e525208a606656b8d.png';
+import professorZhao from '@/assets/drzhao.png';
+import tianyouLuo from '@/assets/Daniel.jpeg';
 
 interface Testimonial {
   id: number;
@@ -15,7 +16,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "An exceptional engineer with a rare combination of technical depth and leadership ability. Their work on our ML infrastructure transformed how we deploy models at scale.",
+    quote: "Placeholder",
     name: "Dr. Zhao ZhiQiang",
     role: "Lecturer, Nanyang Polytechnic — AI & Data Engineering",
     company: "Professor for core AI modules | NUS Alumni (PhD, Mechanical Engineering)",
@@ -24,12 +25,12 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "During their internship, they demonstrated initiative and technical excellence far beyond their experience level. A natural problem solver who consistently delivers high-quality work.",
-    name: "Emma Rodriguez",
-    role: "Intern Supervisor & Tech Lead",
-    company: "DataStream Analytics",
-    imageUrl: "https://images.unsplash.com/photo-1584940121819-1883a5d3b0bd?w=400&h=400&fit=crop",
-    linkedinUrl: "#",
+    quote: "Placeholder",
+    name: "TianYou Luo",
+    role: "Internship Supervisor",
+    company: "Senquire Pte LTD | NUS Alumni (B.CompSci, 2021–2025)",
+    imageUrl: tianyouLuo,
+    linkedinUrl: "https://www.linkedin.com/in/tian-you-luo/",
   },
 ];
 
@@ -52,7 +53,7 @@ export function Testimonials() {
             Testimonials
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
-            Words from my lecturer and supervisor, who have witnessed my attitude towards learning & my tenacity at work
+            Words from my lecturer and supervisor, who have witnessed my attitude towards learning & my tenacity at work.
           </p>
         </motion.div>
 

@@ -1,0 +1,227 @@
+Figma Make Prompt — Section 1 (Hero)
+Create the hero section for a modern portfolio website with a clean, cool, minimalist vibe and generous negative space. The layout should feel premium, legible, and confident. Use placeholder text but label all fields clearly as “Name”, “Title”, and “About me”. Include a Download CV button and a Get in touch button that visually indicates it scrolls to the footer.
+
+Hero Content & Layout Requirements
+- Left column:
+  - Large headline: Name
+  - Subheadline: Title
+  - Short paragraph labeled: About me with lorem ipsum
+  - Two buttons:
+    - Primary: Download CV
+    - Secondary: Get in touch (with subtle arrow or anchor icon to hint scroll)
+- Right column:
+  - A portrait placeholder inside a clean, slightly stylized frame (circle or rounded rectangle)
+  - A small favicon placeholder (square 48x48) positioned subtly near the portrait (top-right or top-left), as a branding accent
+  - The favicon should be a minimal monogram using initials “M.H”
+
+Style Direction
+- Mood: Clean, cool, modern, minimal, with subtle wow factor
+- Typography: Use a bold, expressive headline font paired with a clean readable body font (not default system fonts)
+- Color palette: Mostly neutral (white / off-white / light gray), with one restrained accent color for buttons and subtle highlights
+- Spacing: Large margins and padding; clear visual breathing room
+- Grid: 12-column layout; hero spans full width with content centered in a max-width container
+
+Motion / Interaction Notes (for Figma prototyping cues)
+- Add notes for smooth, precise motion:
+  - Hero content fades in with staggered animation
+  - Portrait softly reveals with a mask or subtle scale-in
+  - Buttons have a gentle hover lift (no aggressive bounce)
+
+Additional Notes
+- Keep everything sleek and minimal, but add one distinctive visual detail (e.g., thin accent line, subtle gradient band, or a small geometric shape near the portrait) to deliver a wow moment without clutter.
+
+Responsiveness
+- Ensure the layout scales cleanly for phone, tablet, and large monitors. Design with a mobile-first mindset and provide desktop and mobile variants where appropriate.
+
+Figma Make Prompt — Section 2 (Skills Gallery: Stars + Planets Constellation)
+Create a skills gallery section that visualizes skills as a starfield/planet system. The theme is dark overall (black/dark charcoal background) with white text and minimal, cool accents. The design should stay clean and legible with generous negative space.
+
+Concept
+- Use a starfield motif: small dots for minor skills, larger “planets” for core domains.
+- No literal planet artwork needed; keep it abstract: circles, dots, thin orbit lines.
+- Visual style: white on black, with one subtle accent color for highlights.
+
+Layout Requirements
+- Section title: “Skills” (placeholder ok)
+- Subtext: short lorem ipsum line explaining breadth of skills
+- Central constellation/planet system that fills the width of the section
+- Each large planet represents a skill domain (label beneath or near the planet)
+- Each planet has 3–6 smaller “moons” (skill chips) orbiting or clustered nearby
+
+Motion / Interaction Notes (for prototyping cues)
+- Slow, smooth orbital drift (subtle)
+- On hover: planet softly glows and its moons fade in or expand
+- Keep motion precise and minimal—no bouncy effects
+
+Accessibility & Legibility
+- Maintain high contrast (white text on dark background)
+- Labels must be readable at a glance
+
+Responsiveness
+- Ensure the constellation rearranges cleanly for mobile and tablet (stacked or simplified clusters)
+
+Skills Constellation Labels (finalized)
+Planets (Domains)
+- AI / Machine Learning
+- Data Engineering
+- Full-Stack Development
+- DevOps & Production
+- Observability & Monitoring
+- Systems / Platform Engineering
+- Soft Skills
+
+Moons (Skills)
+AI / Machine Learning
+- Python
+- TensorFlow
+- PyTorch
+- LLM Integration
+- Ollama
+- Model Fine-tuning
+
+Data Engineering
+- PostgreSQL
+- TimescaleDB
+- Kafka
+- Spark
+- Kedro
+- Pandas
+- Polars
+- Pyarrow
+- ETL/ELT Pipelines
+- Data Warehousing
+- Redis
+- Power BI
+
+Full-Stack Development
+- HTML/CSS
+- JavaScript
+- React
+- Tailwind CSS
+- Node.js
+- REST APIs
+- Full-stack Shipping
+
+DevOps & Production
+- Docker
+- Kubernetes
+- Nginx
+- CI/CD
+- AWS
+- GitHub
+- Debian Packaging
+
+Observability & Monitoring
+- Grafana
+- Prometheus
+- Metrics & Alerting
+- Logs/Tracing
+
+Systems / Platform Engineering
+- Linux
+- Bash
+- Textual TUI Apps
+- Networking
+- Security Basics
+- Packaging & Distribution
+
+Soft Skills
+- Good Communicator
+- Leader
+- Resilient
+- Responsible
+- Inquisitive & Keen to Learn
+- Operations Management
+
+Figma Make Prompt — Section 3 (Projects: Focus Lock Showcase)
+Create a projects section that highlights 4 heavy-hitting projects using a “Focus Lock” carousel animation. The section should feel premium and clean, with a subtle wow factor and strong legibility.
+
+Concept
+- A horizontal “Focus Lock” carousel that auto-cycles every 5–6 seconds.
+- Show 3 cards at a time: center card is active, left/right are partial previews.
+- When the center card locks in, it expands to near full width with a soft dim/blur of the background rail.
+- The active panel expands smoothly with a gentle zoom and soft reveal of details.
+
+Layout Requirements
+- Section title: “Projects” (placeholder ok)
+- Short subtext line (lorem ipsum)
+- Exactly 4 project cards total: each shows project name, role, tech stack chips, and 1–2 sentence summary
+- Active project expands to near full width with visible sections:
+  - Project Name
+  - Role
+  - Tech Stack chips
+  - Key Highlights (3 bullets)
+  - CTA buttons: “View Project” and “Case Study” (placeholder)
+
+Motion / Interaction Notes (for prototyping cues)
+- Auto-cycle with smooth easing, 5–6s interval
+- On hover/tap: pause cycle and expand details
+- Use sliding + fade + scale for transitions, no bounce
+
+Style Direction
+- Match clean/minimal aesthetic with generous spacing
+- Use subtle accent color for active project and CTA buttons
+- Keep backgrounds minimal; use thin borders or soft shadow for depth
+
+Responsiveness
+- On mobile: convert carousel to vertical stack with one expanded card and swipe navigation
+
+Figma Make Prompt — Section 4 (Certs, Accomplishments, CCA Collage)
+Create a simple, clean collage section that showcases technical certificates, accomplishments, and CCA activities. The collage should be a grid of photo placeholders that cycles through images. Keep it minimal and secondary in visual hierarchy compared to Projects.
+
+Layout Requirements
+- Section title: “Certs & Accomplishments” (placeholder ok)
+- Short subtext line (lorem ipsum)
+- Collage grid: 6–10 photo placeholders (mixed sizes for visual interest)
+- On hover/tap: image expands to show the full photo in a lightbox-style view
+
+Motion / Interaction Notes
+- Slow, subtle auto-cycle of images (crossfade)
+- Expansion is smooth and clean, no bounce
+
+Style Direction
+- Minimal framing, thin borders or soft shadow
+- Keep spacing generous and consistent with the rest of the page
+
+Responsiveness
+- On mobile: grid collapses to a single column with swipe to view
+
+Figma Make Prompt — Section 5 (Testimonials)
+Create a simple testimonials section with static text cards and circular photo bubbles. The tone should be professional and credible.
+
+Layout Requirements
+- Section title: “Testimonials” (placeholder ok)
+- 2–4 testimonial cards
+- Each card includes:
+  - Quote text (lorem ipsum)
+  - Name + role (e.g., Lecturer, Intern Supervisor)
+  - LinkedIn profile link placeholder
+  - Circular photo bubble
+
+Style Direction
+- Clean cards with soft borders or subtle shadows
+- Keep spacing generous, legible typography
+
+Responsiveness
+- On mobile: stack cards vertically
+
+Figma Make Prompt — Section 6 (Footer + Header Behavior)
+Create a footer that is fixed to the bottom of the viewport and a header that is sticky on scroll.
+
+Header Requirements
+- Sticky header that follows the scroll
+- Contains: Name | navigation links to each section | favicon (M.H)
+- Minimal, clean styling with subtle separation from content (thin line or soft blur)
+
+Footer Requirements
+- Fixed to bottom of viewport (always visible)
+- CTA text (e.g., “Let’s build something great.” placeholder)
+- Icon row with hover expansion for: LinkedIn, GitHub, Gmail
+- Icons enlarge slightly on hover with smooth easing
+
+Style Direction
+- Keep footer clean and unobtrusive, consistent with the overall aesthetic
+- High contrast for icons and CTA text
+
+Responsiveness
+- On mobile: header nav collapses into compact layout; footer icons stack or reduce size

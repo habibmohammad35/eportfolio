@@ -1,50 +1,87 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
+import promptAward from '@/assets/prompt_award.jpg';
+import iappsTeam from '@/assets/IappsTeam.jpeg';
+import nkfBefriending from '@/assets/NKFbefriending.jpeg';
+import aiEthicsBadge from '@/assets/484b22c7-0b5a-4d8f-95f2-d35db107e438.png';
+import caieCert from '@/assets/caie_cert.png';
+import nvidiaCert from '@/assets/nvidia_cert.png';
+import microsoftAICert from '@/assets/microsoft_azure_ai_cert.png';
 
 interface AccomplishmentImage {
   id: number;
   url: string;
   title: string;
   gridSize: string;
+  description?: string;
+  date?: string;
+  organization?: string;
 }
 
 const images: AccomplishmentImage[] = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1766722906733-609eebf3b63a?w=800&h=600&fit=crop',
-    title: 'AWS Certified Solutions Architect',
+    url: iappsTeam,
+    title: 'I-Appreciate@SEG 2024',
+    description: 'Organised by School of Engineering Club, NYP. I served as Welfare IC and stepped up to support the team across tasks during a first-time experience for many of us. My experience as an Assistant Sergeant Major in NCC helped me plan and lead volunteers effectively.',
+    date: '7 Nov 2024',
+    organization: 'School of Engineering Club, NYP',
     gridSize: 'col-span-2 row-span-2',
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1560523159-94c9d18bcf27?w=600&h=600&fit=crop',
-    title: 'Tech Conference Speaker',
-    gridSize: 'col-span-1 row-span-1',
+    url: nkfBefriending,
+    title: 'NKF Befriending Session',
+    description: 'Facilitated an NKF befriending session on 22 Nov, 1–3pm. I learned a lot about the struggles of those living with diabetes and what their daily life is like.',
+    date: '22 Nov',
+    organization: 'NKF',
+    gridSize: 'col-span-1 row-span-2',
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1739298061707-cefee19941b7?w=600&h=600&fit=crop',
-    title: 'Team Leadership Award',
+    url: nvidiaCert,
+    title: 'NVIDIA Certificate of Competency',
+    description: 'Completed the NVIDIA Fundamentals of Deep Learning program, demonstrating core DL concepts and practical model building.',
+    date: '15 Jan 2025',
+    organization: 'NVIDIA',
     gridSize: 'col-span-1 row-span-1',
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1649451844813-3130d6f42f8a?w=600&h=800&fit=crop',
-    title: 'Hackathon Winner 2025',
+    url: promptAward,
+    title: 'National Youth AI Prompt Design Challenge',
+    description: 'Hackathon project with Min Phyo Thura. Achieved 3rd place in the National Youth AI Prompt Design Challenge.',
+    date: '29 July 2024',
+    organization: 'Straits Interactive & CapaBara',
     gridSize: 'col-span-1 row-span-2',
   },
   {
     id: 5,
-    url: 'https://images.unsplash.com/photo-1767595789539-cd012af80914?w=600&h=600&fit=crop',
-    title: 'Master\'s Degree in Computer Science',
+    url: microsoftAICert,
+    title: 'Microsoft Certified: Azure AI Fundamentals',
+    description: 'Foundational knowledge of machine learning and AI concepts, plus related Microsoft Azure services.',
+    date: '16 Jan 2025',
+    organization: 'Microsoft',
     gridSize: 'col-span-1 row-span-1',
   },
   {
     id: 6,
-    url: 'https://images.unsplash.com/photo-1758691736067-b309ee3ef7b9?w=800&h=600&fit=crop',
-    title: 'Professional Training Certification',
-    gridSize: 'col-span-2 row-span-1',
+    url: aiEthicsBadge,
+    title: 'AI Ethics and Governance (Associate)',
+    description: 'Certification in AI Ethics and Governance (Associate) issued jointly by NYP and Singapore Computer Society.',
+    date: '19 Nov 2025',
+    organization: 'Singapore Computer Society & NYP',
+    gridSize: 'col-span-1 row-span-1',
+  },
+  {
+    id: 7,
+    url: caieCert,
+    title: 'Chartered AI Engineer (CAIE) Associate',
+    description: 'Successfully achieved the CAIE Associate certification, demonstrating applied AI competency across assessment and interview stages.',
+    date: '30 Sept 2025',
+    organization: 'AI Singapore',
+    gridSize: 'col-span-1 row-span-1',
   },
 ];
 
@@ -66,10 +103,10 @@ export function Accomplishments() {
             className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Certs & Accomplishments
+            Technical & Social Milestones
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
-            A visual journey through certifications, awards, and memorable moments in my professional development
+            A visual journey through certifications, awards, and memorable moments in my personal development.
           </p>
         </motion.div>
 
@@ -151,14 +188,14 @@ export function Accomplishments() {
                       className="text-gray-300 leading-relaxed"
                       style={{ fontFamily: 'var(--font-body)' }}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. This certification/accomplishment represents a significant milestone in professional development and technical expertise.
+                      {selectedImage.description || 'A milestone that reflects my growth across technical, social, and external experiences.'}
                     </p>
                     <div className="pt-4 border-t border-gray-700">
                       <p className="text-sm text-gray-400" style={{ fontFamily: 'var(--font-body)' }}>
-                        Date: January 2026
+                        Date: {selectedImage.date || '—'}
                       </p>
                       <p className="text-sm text-gray-400" style={{ fontFamily: 'var(--font-body)' }}>
-                        Organization: Professional Institute
+                        Organization: {selectedImage.organization || '—'}
                       </p>
                     </div>
                   </div>

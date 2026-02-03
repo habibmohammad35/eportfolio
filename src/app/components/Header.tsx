@@ -35,42 +35,42 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('accomplishments')}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Accomplishments
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Contact

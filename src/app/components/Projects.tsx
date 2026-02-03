@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, ExternalLink, FileText, Github } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, FileText, Github, Play } from 'lucide-react';
+import aldiTalkImage from '@/assets/AldiTalk.png';
 
 interface Project {
   id: number;
@@ -9,67 +10,85 @@ interface Project {
   techStack: string[];
   summary: string;
   highlights: string[];
+  url?: string;
+  primaryUrl?: string;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+  certUrl?: string;
+  videoUrl?: string;
+  companyUrl?: string;
+  showCaseStudy?: boolean;
   isGithubCard?: boolean;
 }
 
 const projects: Project[] = [
   {
     id: 1,
-    name: 'AI-Powered Analytics Platform',
-    role: 'Lead Full-Stack Engineer',
-    techStack: ['React', 'Python', 'TensorFlow', 'PostgreSQL', 'Docker'],
-    summary: 'Built an end-to-end analytics platform with ML-driven insights for enterprise clients.',
+    name: 'EaglAI Intelligence',
+    role: 'Main Developer (Full-Stack)',
+    techStack: ['React', 'Grafana', 'PostgreSQL', 'TimescaleDB', 'Nginx', 'Python', 'FastAPI', 'Celery', 'Systemd', 'Textual', 'Docker', 'FTP', 'Debian Packaging'],
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    companyUrl: 'https://www.senquire.com/',
+    primaryUrl: 'https://www.senquire.com/',
+    primaryLabel: 'View Company Site',
+    secondaryLabel: 'Watch a Demo',
+    summary: 'Built a packaged Advanced Analytics Intelligence system covering frontend, backend, deployment, and system tooling for offline/air-gapped use.',
     highlights: [
-      'Reduced query times by 60% through optimized data pipelines',
-      'Integrated custom LLM for natural language queries',
-      'Deployed on Kubernetes with 99.9% uptime',
+      'Built React UI, Python backend, and Nginx delivery layer with production packaging',
+      'Implemented Textual TUI for config, automated dependency installs, and systemd services/logs',
+      'Enabled networking/FTP workflows and Dockerized test runs for the PQE team',
     ],
   },
   {
     id: 2,
-    name: 'Real-Time Data Streaming System',
-    role: 'Data Engineering Architect',
-    techStack: ['Kafka', 'Spark', 'TimescaleDB', 'Grafana', 'AWS'],
-    summary: 'Designed scalable streaming infrastructure processing 100M+ events daily.',
+    name: 'AldiTalk: Singapore Dialect Translator for Elderly Use',
+    role: 'Data Sourcing, Model Training & UI/UX',
+    techStack: ['Flask', 'Python', 'JavaScript', 'Azure STT/TTS', 'Azure Translator', 'GPT-4o', 'Hugging Face', 'Meta MMS-TTS-NAN'],
+    summary: 'Speech-to-speech translation web app for care homes, enabling real-time Hokkien/Cantonese translation with an elderly-friendly UI.',
     highlights: [
-      'Achieved sub-second latency for real-time processing',
-      'Built comprehensive monitoring with Prometheus & Grafana',
-      'Automated deployment with CI/CD pipelines',
+      'Collected and curated dialect data from volunteer recordings with augmentation',
+      'Trained and tuned STT/TTS pipeline (Azure Custom Speech + Hokkien flow)',
+      'Designed senior-friendly UI for assisted communication in care settings',
     ],
+    videoUrl: 'https://www.youtube.com/embed/GFAS6MAVhic',
+    url: 'https://github.com/habibmohammad35/AldiTalk',
   },
   {
     id: 3,
-    name: 'Enterprise DevOps Automation Suite',
-    role: 'DevOps Lead',
-    techStack: ['Kubernetes', 'Docker', 'GitHub Actions', 'Nginx', 'Terraform'],
-    summary: 'Created automated deployment system reducing release times from days to hours.',
+    name: 'CAIE Associate Capstone (Kedro Pipeline)',
+    role: 'Solo Developer',
+    techStack: ['Python', 'Kedro', 'LightGBM', 'XGBoost', 'Logistic Regression'],
+    url: 'https://github.com/habibmohammad35/caie-nyp-mohammad-habib',
+    certUrl: 'https://certificates.aisingapore.org/certificate-verification/1275F2B00-1275F2A9F-1274FE606/',
+    summary: 'Built a full ML pipeline for CAIE certification using Kedro, from data cleaning to feature engineering, modeling, and fine-tuning.',
     highlights: [
-      'Reduced deployment errors by 85% with automated testing',
-      'Implemented blue-green deployment strategies',
-      'Established comprehensive logging and alerting',
+      'Modular pipelines for data processing, feature engineering, modeling, and tuning',
+      'Introduced weak-rule feature flags to capture high-signal patterns',
+      'Reproducible Kedro pipeline with modular stages and configs',
     ],
   },
   {
     id: 4,
-    name: 'Machine Learning Operations Platform',
-    role: 'ML Engineer & Platform Architect',
-    techStack: ['PyTorch', 'Kedro', 'MLflow', 'FastAPI', 'Redis'],
-    summary: 'Built MLOps platform enabling rapid model deployment and experimentation.',
+    name: 'AviDefender: Bird Detection for Hawker Centres',
+    role: 'AI & IoT Developer (Team Project)',
+    techStack: ['Raspberry Pi', 'YOLOv11 TFLite', 'Flask', 'MQTT', 'Arduino', 'MySQL', 'CAD'],
+    summary: 'Real-time AI bird detector and deterrent for hawker centres, with live dashboard, alerts, and logging to protect tray stations.',
     highlights: [
-      'Accelerated model training by 3x with distributed computing',
-      'Created automated model versioning and rollback system',
-      'Integrated A/B testing framework for model performance',
+      'Edge inference on Raspberry Pi with YOLOv11 TFLite + live video dashboard',
+      'MQTT pipeline to Arduino deterrent and Sense HAT visualization',
+      'MySQL logging, CSV export, and real-time staff alerts',
     ],
+    videoUrl: 'https://www.youtube.com/embed/6p_sFcpTxOY',
+    url: 'https://github.com/habibmohammad35/bird-detection-with-Pi4B',
   },
   {
     id: 5,
     name: 'View More on GitHub',
-    role: 'Explore Additional Projects',
+    role: 'Explore Additional My Projects',
     techStack: [],
-    summary: 'Check out my GitHub profile for more projects, open-source contributions, and code samples.',
+    summary: 'Check out my GitHub profile for more projects and code samples.',
     highlights: [
       'Browse through repositories showcasing various technologies',
-      'View contributions to open-source projects',
       'Explore code samples and experimental work',
     ],
     isGithubCard: true,
@@ -78,17 +97,28 @@ const projects: Project[] = [
 
 export function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  const openVideo = (url: string) => {
+    setActiveVideo(url);
+    setIsAutoPlaying(false);
+  };
+
+  const closeVideo = () => {
+    setActiveVideo(null);
+    setIsAutoPlaying(true);
+  };
+
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || activeVideo) return;
     
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % projects.length);
-    }, 5500);
+    }, 10000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, activeVideo]);
 
   const goToNext = () => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
@@ -126,7 +156,7 @@ export function Projects() {
             Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
-            These are the projects that are the most meaningful to me, ranging from accomplished projects to projects born from the fruits of my labour
+            These are the projects that are the most meaningful to me, ranging from accomplished projects to projects born from the fruits of my labour.
           </p>
         </motion.div>
 
@@ -141,7 +171,7 @@ export function Projects() {
               animate={{ x: 0, opacity: 0.4 }}
               transition={{ duration: 0.5 }}
             >
-              <ProjectCard project={projects[visible.prev]} isActive={false} />
+              <ProjectCard project={projects[visible.prev]} isActive={false} onPlayVideo={openVideo} />
             </motion.div>
 
             {/* Active Card (Center) */}
@@ -156,7 +186,7 @@ export function Projects() {
                 onMouseEnter={() => setIsAutoPlaying(false)}
                 onMouseLeave={() => setIsAutoPlaying(true)}
               >
-                <ProjectCard project={projects[visible.current]} isActive={true} />
+                <ProjectCard project={projects[visible.current]} isActive={true} onPlayVideo={openVideo} />
               </motion.div>
             </AnimatePresence>
 
@@ -168,7 +198,7 @@ export function Projects() {
               animate={{ x: 0, opacity: 0.4 }}
               transition={{ duration: 0.5 }}
             >
-              <ProjectCard project={projects[visible.next]} isActive={false} />
+              <ProjectCard project={projects[visible.next]} isActive={false} onPlayVideo={openVideo} />
             </motion.div>
           </div>
 
@@ -207,6 +237,28 @@ export function Projects() {
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6" onClick={closeVideo}>
+          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src={activeVideo}
+              title="Project Demo"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            <button
+              onClick={closeVideo}
+              className="absolute top-3 right-3 bg-white/90 text-gray-900 rounded-full w-9 h-9 flex items-center justify-center"
+              aria-label="Close video"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
         </div>
       </div>
     </section>
@@ -216,9 +268,10 @@ export function Projects() {
 interface ProjectCardProps {
   project: Project;
   isActive: boolean;
+  onPlayVideo?: (url: string) => void;
 }
 
-function ProjectCard({ project, isActive }: ProjectCardProps) {
+function ProjectCard({ project, isActive, onPlayVideo }: ProjectCardProps) {
   return (
     <div
       className={`bg-white rounded-2xl border-2 transition-all ${
@@ -315,20 +368,86 @@ function ProjectCard({ project, isActive }: ProjectCardProps) {
               </a>
             ) : (
               <>
-                <button
-                  className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group"
-                  style={{ fontFamily: 'var(--font-body)' }}
-                >
-                  View Project
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
-                <button
-                  className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
-                  style={{ fontFamily: 'var(--font-body)' }}
-                >
-                  Case Study
-                  <FileText className="w-4 h-4" />
-                </button>
+                {project.primaryUrl ? (
+                  <a
+                    href={project.primaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    {project.primaryLabel || 'View Project'}
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </a>
+                ) : project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    View Project
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </a>
+                ) : (
+                  <button
+                    className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    View Project
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                )}
+                {project.secondaryLabel && project.videoUrl ? (
+                  <button
+                    onClick={() => onPlayVideo?.(project.videoUrl!)}
+                    className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    {project.secondaryLabel}
+                    <Play className="w-4 h-4" />
+                  </button>
+                ) : project.companyUrl ? (
+                  <a
+                    href={project.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    View Company Site
+                    <FileText className="w-4 h-4" />
+                  </a>
+                ) : project.certUrl ? (
+                  <a
+                    href={project.certUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    View Certificate
+                    <FileText className="w-4 h-4" />
+                  </a>
+                ) : project.videoUrl ? (
+                  <button
+                    onClick={() => onPlayVideo?.(project.videoUrl!)}
+                    className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    Watch a Demo
+                    <Play className="w-4 h-4" />
+                  </button>
+                ) : (
+                  <button
+                    className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    Case Study
+                    <FileText className="w-4 h-4" />
+                  </button>
+                )}
               </>
             )}
           </motion.div>
