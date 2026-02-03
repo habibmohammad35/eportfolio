@@ -135,18 +135,14 @@ export function Hero() {
             {/* Portrait frame */}
             <div className="relative">
               {/* Portrait */}
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl relative">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-[32px] overflow-hidden shadow-2xl relative border-2 border-transparent bg-gradient-to-br from-blue-600 to-purple-600 p-[2px]">
                 <img
                   src={portraitImage}
                   alt="Portrait"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-[28px]"
                 />
               </div>
 
-              {/* Favicon badge */}
-              <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl border border-white">
-                <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="MH" className="w-16 h-16" />
-              </div>
             </div>
           </motion.div>
         </div>
