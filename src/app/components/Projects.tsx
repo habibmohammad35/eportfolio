@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, ExternalLink, FileText } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, FileText, Github } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -9,6 +9,7 @@ interface Project {
   techStack: string[];
   summary: string;
   highlights: string[];
+  isGithubCard?: boolean;
 }
 
 const projects: Project[] = [
@@ -59,6 +60,19 @@ const projects: Project[] = [
       'Created automated model versioning and rollback system',
       'Integrated A/B testing framework for model performance',
     ],
+  },
+  {
+    id: 5,
+    name: 'View More on GitHub',
+    role: 'Explore Additional Projects',
+    techStack: [],
+    summary: 'Check out my GitHub profile for more projects, open-source contributions, and code samples.',
+    highlights: [
+      'Browse through repositories showcasing various technologies',
+      'View contributions to open-source projects',
+      'Explore code samples and experimental work',
+    ],
+    isGithubCard: true,
   },
 ];
 
@@ -112,7 +126,7 @@ export function Projects() {
             Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
-            Showcasing impactful work across AI, data engineering, and full-stack development
+            These are the projects that are the most meaningful to me, ranging from accomplished projects to projects born from the fruits of my labour
           </p>
         </motion.div>
 
@@ -288,20 +302,35 @@ function ProjectCard({ project, isActive }: ProjectCardProps) {
             transition={{ duration: 0.3, delay: 0.3 }}
             className="flex flex-wrap gap-3 pt-4"
           >
-            <button
-              className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              View Project
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
-            <button
-              className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              Case Study
-              <FileText className="w-4 h-4" />
-            </button>
+            {project.isGithubCard ? (
+              <a
+                href="https://github.com/habibmohammad35"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group text-lg"
+                style={{ fontFamily: 'var(--font-body)' }}
+              >
+                Visit My GitHub
+                <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </a>
+            ) : (
+              <>
+                <button
+                  className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2 group"
+                  style={{ fontFamily: 'var(--font-body)' }}
+                >
+                  View Project
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </button>
+                <button
+                  className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+                  style={{ fontFamily: 'var(--font-body)' }}
+                >
+                  Case Study
+                  <FileText className="w-4 h-4" />
+                </button>
+              </>
+            )}
           </motion.div>
         )}
       </div>

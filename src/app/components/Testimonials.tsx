@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Linkedin, Quote } from 'lucide-react';
+import professorZhao from 'figma:asset/92ed638d16ef8d032740187e525208a606656b8d.png';
 
 interface Testimonial {
   id: number;
@@ -15,11 +16,11 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     quote: "An exceptional engineer with a rare combination of technical depth and leadership ability. Their work on our ML infrastructure transformed how we deploy models at scale.",
-    name: "Dr. Sarah Johnson",
-    role: "Senior Lecturer, Computer Science",
-    company: "University of Technology",
-    imageUrl: "https://images.unsplash.com/photo-1758685734503-58a8accc24e8?w=400&h=400&fit=crop",
-    linkedinUrl: "#",
+    name: "Dr. Zhao ZhiQiang",
+    role: "Lecturer, Nanyang Polytechnic — AI & Data Engineering",
+    company: "Professor for core AI modules | NUS Alumni (PhD, Mechanical Engineering)",
+    imageUrl: professorZhao,
+    linkedinUrl: "https://www.linkedin.com/in/zhiqiang-zhao-a6877318b/",
   },
   {
     id: 2,
@@ -51,7 +52,7 @@ export function Testimonials() {
             Testimonials
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
-            Words from colleagues, mentors, and supervisors who've witnessed my work firsthand
+            Words from my lecturer and supervisor, who have witnessed my attitude towards learning & my tenacity at work
           </p>
         </motion.div>
 
@@ -68,7 +69,7 @@ export function Testimonials() {
             >
               <div className="flex flex-col md:flex-row">
                 {/* Profile Photo - Portrait size on the left */}
-                <div className="md:w-80 h-80 md:h-auto flex-shrink-0 overflow-hidden">
+                <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 overflow-hidden rounded-full mx-auto md:mx-0 md:ml-8 md:my-8">
                   <img
                     src={testimonial.imageUrl}
                     alt={testimonial.name}
