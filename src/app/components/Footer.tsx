@@ -10,21 +10,21 @@ export function Footer() {
       id: 'linkedin',
       icon: Linkedin,
       label: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/mohammad-habib-617404185/',
       color: 'hover:text-blue-600',
     },
     {
       id: 'github',
       icon: Github,
       label: 'GitHub',
-      url: 'https://github.com',
+      url: 'https://github.com/habibmohammad35',
       color: 'hover:text-gray-900',
     },
     {
       id: 'gmail',
       icon: Mail,
       label: 'Gmail',
-      url: 'mailto:your.email@gmail.com',
+      url: 'mailto:habibmohammad35@gmail.com',
       color: 'hover:text-red-600',
     },
   ];
@@ -39,7 +39,7 @@ export function Footer() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center md:text-left"
+            className="text-center md:text-left space-y-2"
           >
             <h3
               className="text-2xl lg:text-3xl font-bold text-gray-900"
@@ -48,10 +48,10 @@ export function Footer() {
               Let's build something great.
             </h3>
             <p
-              className="text-gray-600 mt-1"
+              className="text-gray-600"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              Open to exciting opportunities and collaborations
+              Click on the icon links to get in touch
             </p>
           </motion.div>
 
@@ -94,7 +94,7 @@ export function Footer() {
             className="text-sm text-gray-500"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            © 2026 Your Name. All rights reserved.
+            © 2026 Mohammad Habib. All rights reserved.
           </p>
         </motion.div>
       </div>

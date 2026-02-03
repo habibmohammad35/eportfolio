@@ -27,7 +27,7 @@ export function Header() {
           {/* Logo/Name */}
           <div className="flex items-center">
             <span className="text-lg font-semibold tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              Name
+              Mohammad Habib
             </span>
           </div>
 
@@ -67,6 +67,13 @@ export function Header() {
               style={{ fontFamily: 'var(--font-body)' }}
             >
               Testimonials
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Contact
             </button>
           </nav>
 

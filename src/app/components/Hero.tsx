@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowDown, Download } from 'lucide-react';
+import portraitImage from 'figma:asset/8f0415079fa04a35a909af26727e62b4827854fb.png';
 
 export function Hero() {
   const scrollToFooter = () => {
@@ -40,7 +41,7 @@ export function Hero() {
                   className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  Your Name Here
+                  Mohammad Habib
                 </h1>
               </motion.div>
 
@@ -113,9 +114,8 @@ export function Hero() {
             <div className="relative">
               {/* Portrait */}
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 opacity-20" />
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop"
+                  src={portraitImage}
                   alt="Portrait"
                   className="w-full h-full object-cover"
                 />
