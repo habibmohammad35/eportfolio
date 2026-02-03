@@ -145,7 +145,7 @@ export function Hero() {
 
               {/* Favicon badge */}
               <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl border border-white">
-                <img src="/favicon.svg" alt="MH" className="w-16 h-16" />
+                <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="MH" className="w-16 h-16" />
               </div>
             </div>
           </motion.div>
