@@ -16,22 +16,14 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "Placeholder",
+    quote: "“Habib is a dedicated and intellectually curious student who consistently demonstrated strong academic performance. He actively participated in class discussions, frequently posing insightful and thought-provoking questions that reflected his genuine interest in mastering complex topics.”",
     name: "Dr. Zhao ZhiQiang",
     role: "Lecturer, Nanyang Polytechnic — AI & Data Engineering",
     company: "Professor for core AI modules | NUS Alumni (PhD, Mechanical Engineering)",
     imageUrl: professorZhao,
     linkedinUrl: "https://www.linkedin.com/in/zhiqiang-zhao-a6877318b/",
   },
-  {
-    id: 2,
-    quote: "Placeholder",
-    name: "TianYou Luo",
-    role: "Internship Supervisor",
-    company: "Senquire Pte LTD | NUS Alumni (B.CompSci, 2021–2025)",
-    imageUrl: tianyouLuo,
-    linkedinUrl: "https://www.linkedin.com/in/tian-you-luo/",
-  },
+  
 ];
 
 export function Testimonials() {
@@ -70,7 +62,7 @@ export function Testimonials() {
             >
               <div className="flex flex-col md:flex-row">
                 {/* Profile Photo - Portrait size on the left */}
-                <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 overflow-hidden rounded-full mx-auto md:mx-0 md:ml-8 md:my-8">
+                <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 overflow-hidden rounded-full mx-auto md:mx-0 md:ml-8 md:my-8 self-center">
                   <img
                     src={testimonial.imageUrl}
                     alt={testimonial.name}
@@ -86,12 +78,12 @@ export function Testimonials() {
                   </div>
 
                   {/* Quote Text */}
-                  <div className="mb-8 relative z-10">
+                  <div className="mb-8 relative z-10 pr-12">
                     <p
                       className="text-lg text-gray-700 leading-relaxed"
                       style={{ fontFamily: 'var(--font-body)' }}
                     >
-                      "{testimonial.quote}"
+                      {testimonial.quote}
                     </p>
                   </div>
 
