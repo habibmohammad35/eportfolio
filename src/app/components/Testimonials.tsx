@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Linkedin, Quote } from 'lucide-react';
 import professorZhao from '@/assets/drzhao.png';
-import tianyouLuo from '@/assets/Daniel.jpeg';
+import shubhamDarwatkar from '@/assets/Shubham.jpeg';
 
 interface Testimonial {
   id: number;
@@ -10,7 +10,7 @@ interface Testimonial {
   role: string;
   company: string;
   imageUrl: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -23,7 +23,15 @@ const testimonials: Testimonial[] = [
     imageUrl: professorZhao,
     linkedinUrl: "https://www.linkedin.com/in/zhiqiang-zhao-a6877318b/",
   },
-  
+  {
+    id: 2,
+    quote: "“It was a great experience working with you. You bring strong energy, professionalism, and a consistently positive attitude to the team.”",
+    name: "Shubham Darwatkar",
+    role: "Product Manager @ Senquire",
+    company: "",
+    imageUrl: shubhamDarwatkar,
+    linkedinUrl: "https://www.linkedin.com/in/shubham-darwatkar/",
+  },
 ];
 
 export function Testimonials() {
@@ -111,15 +119,17 @@ export function Testimonials() {
                     </div>
 
                     {/* LinkedIn Link */}
-                    <a
-                      href={testimonial.linkedinUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700 transition-colors p-3 hover:bg-blue-50 rounded-lg"
-                      aria-label={`View ${testimonial.name}'s LinkedIn profile`}
-                    >
-                      <Linkedin className="w-7 h-7" />
-                    </a>
+                    {testimonial.linkedinUrl ? (
+                      <a
+                        href={testimonial.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 transition-colors p-3 hover:bg-blue-50 rounded-lg"
+                        aria-label={`View ${testimonial.name}'s LinkedIn profile`}
+                      >
+                        <Linkedin className="w-7 h-7" />
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </div>

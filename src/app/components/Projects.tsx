@@ -27,12 +27,10 @@ const projects: Project[] = [
     name: 'EaglAI Intelligence',
     role: 'Main Developer (Full-Stack)',
     techStack: ['React', 'Grafana', 'PostgreSQL', 'TimescaleDB', 'Nginx', 'Python', 'FastAPI', 'Celery', 'Systemd', 'Textual', 'Docker', 'FTP', 'Debian Packaging'],
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    companyUrl: 'https://www.senquire.com/',
     primaryUrl: 'https://www.senquire.com/',
     primaryLabel: 'View Company Site',
-    secondaryLabel: 'Watch a Demo',
     summary: 'Built a packaged Advanced Analytics Intelligence system covering frontend, backend, deployment, and system tooling for offline/air-gapped use.',
+    showCaseStudy: false,
     highlights: [
       'Built React UI, Python backend, and Nginx delivery layer with production packaging',
       'Implemented Textual TUI for config, automated dependency installs, and systemd services/logs',
@@ -439,7 +437,7 @@ function ProjectCard({ project, isActive, onPlayVideo }: ProjectCardProps) {
                     Watch a Demo
                     <Play className="w-4 h-4" />
                   </button>
-                ) : (
+                ) : project.showCaseStudy !== false ? (
                   <button
                     className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
                     style={{ fontFamily: 'var(--font-body)' }}
@@ -447,7 +445,7 @@ function ProjectCard({ project, isActive, onPlayVideo }: ProjectCardProps) {
                     Case Study
                     <FileText className="w-4 h-4" />
                   </button>
-                )}
+                ) : null}
               </>
             )}
           </motion.div>
